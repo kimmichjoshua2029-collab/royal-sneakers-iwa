@@ -1,0 +1,365 @@
+
+
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Royal Sneakers by IWA</title>
+
+<style>
+
+*{box-sizing:border-box}
+
+body{margin:0;background:#fff;color:#111;font-family:Arial,sans-serif}
+
+header{padding:25px 12px;text-align:center;border-bottom:1px solid #ddd}
+
+header h1{font-family:Georgia,serif;letter-spacing:3px;margin:0}
+
+header p{letter-spacing:5px;font-size:12px}
+
+nav{padding:16px;text-align:center;border-bottom:1px solid #ddd}
+
+nav a{color:#111;text-decoration:none;margin:0 10px;font-size:13px;font-weight:bold}
+
+.hero{background:#111;color:white;text-align:center;padding:65px 15px}
+
+.hero h2{font-family:Georgia,serif;font-size:36px}
+
+.hero p{color:#ddd}
+
+.btn{background:#111;color:white;border:1px solid #111;padding:13px 22px;cursor:pointer}
+
+.hero .btn{background:white;color:#111}
+
+.products{padding:40px 15px;text-align:center}
+
+.products h2,.about h2{font-family:Georgia,serif;font-size:29px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:1000px;margin:30px auto}
+
+.card{border:1px solid #ddd;padding:12px;text-align:left;background:white}
+
+.photo{height:190px;background:#f2f2f2;display:grid;place-items:center;color:#777}
+
+.card h3{font-family:Georgia,serif}
+
+.price{font-weight:bold;font-size:19px}
+
+select,input{padding:11px;border:1px solid #bbb;width:100%;margin:7px 0;background:white}
+
+.card button{width:100%;margin-top:8px}
+
+.cart{background:#f5f5f5;padding:35px 18px}
+
+.cart h2{text-align:center;font-family:Georgia,serif}
+
+.cart-item{background:white;border:1px solid #ddd;padding:13px;margin:10px auto;max-width:650px}
+
+.cart-item button{padding:6px 10px;margin:4px}
+
+.total{font-size:22px;font-weight:bold;text-align:center;margin:20px}
+
+.checkout{max-width:500px;margin:auto}
+
+.about{text-align:center;padding:40px 20px;line-height:1.8}
+
+footer{background:#111;color:white;text-align:center;padding:30px}
+
+footer p{color:#ddd}
+
+button{cursor:pointer}
+
+@media(max-width:400px){.hero h2{font-size:29px}nav a{margin:0 5px}}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>ROYAL SNEAKERS</h1>
+
+<p>BY IWA</p>
+
+</header>
+
+<nav>
+
+<a href="#accueil">ACCUEIL</a>
+
+<a href="#boutique">BOUTIQUE</a>
+
+<a href="#panier">MON PANIER 🛒</a>
+
+<a href="#contact">CONTACT</a>
+
+</nav>
+
+<section class="hero" id="accueil">
+
+<p>BIENVENUE DANS NOTRE UNIVERS</p>
+
+<h2>Le style à chaque pas.</h2>
+
+<p>Découvrez notre collection exclusive de sneakers.</p>
+
+<a href="#boutique"><button class="btn">DÉCOUVRIR</button></a>
+
+</section>
+
+<section class="products" id="boutique">
+
+<h2>Notre collection</h2>
+
+<p>Choisissez vos modèles préférés.</p>
+
+<div class="grid" id="products"></div>
+
+</section>
+
+<section class="cart" id="panier">
+
+<h2>🛒 Mon panier</h2>
+
+<div id="cartItems"></div>
+
+<div class="total" id="total">Total : 0 FCFA</div>
+
+<div class="checkout">
+
+<input id="clientName" placeholder="Votre nom">
+
+<input id="clientCity" placeholder="Votre ville">
+
+<button class="btn" style="width:100%" onclick="sendOrder()">
+
+COMMANDER SUR WHATSAPP
+
+</button>
+
+</div>
+
+<p style="text-align:center;font-size:12px">
+
+Vérifiez votre commande avant de l'envoyer.
+
+</p>
+
+</section>
+
+<section class="about">
+
+<h2>Notre univers</h2>
+
+<p>
+
+Bienvenue chez Royal Sneakers by IWA.
+
+Découvrez une sélection de sneakers
+
+pour affirmer votre style.
+
+Merci de votre confiance et bonne visite !
+
+</p>
+
+</section>
+
+<footer id="contact">
+
+<h3>ROYAL SNEAKERS BY IWA</h3>
+
+<p>L'élégance à chaque pas.</p>
+
+<p>WhatsApp : +225 05 65 86 03 19</p>
+
+<p>© 2026 Royal Sneakers by IWA</p>
+
+</footer>
+
+<script>
+
+const phone = "2250565860319";
+
+// Modifiez les noms et les prix avec vos vrais produits.
+
+const products = [
+
+ {id:1,name:"Sneakers Collection 01",price:15000,sizes:[38,39,40,41,42,43]},
+
+ {id:2,name:"Sneakers Collection 02",price:15000,sizes:[38,39,40,41,42,43]},
+
+ {id:3,name:"Sneakers Collection 03",price:15000,sizes:[38,39,40,41,42,43]}
+
+];
+
+let cart = [];
+
+const money = n => n.toLocaleString("fr-FR")+" FCFA";
+
+function showProducts(){
+
+ document.getElementById("products").innerHTML=products.map(p=>`
+
+ <div class="card">
+
+ <div class="photo">Photo du modèle ${p.id}</div>
+
+ <h3>${p.name}</h3>
+
+ <p class="price">${money(p.price)}</p>
+
+ <label>Choisir une pointure</label>
+
+ <select id="size-${p.id}">
+
+ ${p.sizes.map(s=>`<option value="${s}">${s}</option>`).join("")}
+
+ </select>
+
+ <button class="btn" onclick="addToCart(${p.id})">
+
+ AJOUTER AU PANIER
+
+ </button>
+
+ </div>`).join("");
+
+}
+
+function addToCart(id){
+
+ const product=products.find(p=>p.id===id);
+
+ const size=document.getElementById("size-"+id).value;
+
+ const existing=cart.find(i=>i.id===id&&i.size===size);
+
+ if(existing) existing.qty++;
+
+ else cart.push({...product,size,qty:1});
+
+ showCart();
+
+ alert("Chaussure ajoutée au panier !");
+
+}
+
+function showCart(){
+
+ const area=document.getElementById("cartItems");
+
+ if(cart.length===0){
+
+ area.innerHTML="<p style='text-align:center'>Votre panier est vide.</p>";
+
+ }else{
+
+ area.innerHTML=cart.map((item,index)=>`
+
+ <div class="cart-item">
+
+ <strong>${item.name}</strong>
+
+ <p>Pointure : ${item.size}</p>
+
+ <p>Prix : ${money(item.price)}</p>
+
+ <p>Quantité : ${item.qty}</p>
+
+ <button onclick="changeQty(${index},-1)">−</button>
+
+ <button onclick="changeQty(${index},1)">+</button>
+
+ <button onclick="removeItem(${index})">Supprimer</button>
+
+ </div>`).join("");
+
+ }
+
+ const total=cart.reduce((sum,i)=>sum+i.price*i.qty,0);
+
+ document.getElementById("total").textContent="Total : "+money(total);
+
+}
+
+function changeQty(index,amount){
+
+ cart[index].qty+=amount;
+
+ if(cart[index].qty<=0) cart.splice(index,1);
+
+ showCart();
+
+}
+
+function removeItem(index){
+
+ cart.splice(index,1);
+
+ showCart();
+
+}
+
+function sendOrder(){
+
+ if(cart.length===0){
+
+ alert("Votre panier est vide.");
+
+ return;
+
+ }
+
+ const name=document.getElementById("clientName").value.trim();
+
+ const city=document.getElementById("clientCity").value.trim();
+
+ if(!name||!city){
+
+ alert("Veuillez renseigner votre nom et votre ville.");
+
+ return;
+
+ }
+
+ const total=cart.reduce((sum,i)=>sum+i.price*i.qty,0);
+
+ let message="Bonjour Royal Sneakers by IWA !\n\n";
+
+ message+="Je souhaite commander :\n";
+
+ cart.forEach(i=>{
+
+ message+=`\n- ${i.name}\nPointure : ${i.size}\nQuantité : ${i.qty}\nSous-total : ${money(i.price*i.qty)}\n`;
+
+ });
+
+ message+=`\nTOTAL : ${money(total)}`;
+
+ message+=`\n\nNom : ${name}\nVille : ${city}`;
+
+ message+="\nMerci de confirmer ma commande !";
+
+ window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(message),"_blank");
+
+}
+
+showProducts();
+
+showCart();
+
+</script>
+
+</body>
+
+</html>
