@@ -192,13 +192,31 @@ const phone = "2250565860319";
 
 // Modifiez les noms et les prix avec vos vrais produits.
 
+
+
 const products = [
 
- {id:1,name:"Sneakers Collection 01",price:15000,sizes:[38,39,40,41,42,43]},
+ {id:1,name:"Sneakers Collection 01",price:15000,image:"390277e2-e29a-208a-beb5-19c578ab756f.jpeg",sizes:[40,41,42,43,44,45]},
 
- {id:2,name:"Sneakers Collection 02",price:15000,sizes:[38,39,40,41,42,43]},
+ {id:2,name:"Sneakers Collection 02",price:16000,image:"IMG_1645.jpeg",sizes:[40,41,42,43,44,45]},
 
- {id:3,name:"Sneakers Collection 03",price:15000,sizes:[38,39,40,41,42,43]}
+ {id:3,name:"Sneakers Collection 03",price:16000,image:"IMG_1650.jpeg",sizes:[40,41,42,43,44,45]},
+
+ {id:4,name:"Sneakers Collection 04",price:15000,image:"IMG_1651.jpeg",sizes:[40,41,42,43,44,45]},
+
+ {id:5,name:"Sneakers Collection 05",price:16000,image:"IMG_1652.jpeg",sizes:[40,41,42,43,44,45]},
+
+ {id:6,name:"Sneakers Collection 06",price:16000,image:"IMG_1653.jpeg",sizes:[40,41,42,43,44,45]},
+
+ {id:7,name:"Sneakers Collection 07",price:13000,image:"IMG_1654.jpeg",sizes:[38,39,40,41,42,43,44,45]},
+
+ {id:8,name:"Sneakers Collection 08",price:16000,image:"IMG_1655.jpeg",sizes:[40,41,42,43,44,45]},
+
+ {id:9,name:"Sneakers Collection 09",price:15000,image:"IMG_1656.jpeg",sizes:[40,41,42,43,44,45]},
+
+ {id:10,name:"Sneakers Collection 10",price:16000,image:"IMG_1657.jpeg",sizes:[40,41,42,43,44,45]},
+
+ {id:11,name:"Sneakers Collection 11",price:16000,image:"ef91c658-37c5-52fa-75f3-5c2df9ef1187.jpeg",sizes:[40,41,42,43,44,45]}
 
 ];
 
@@ -206,7 +224,24 @@ let cart = [];
 
 const money = n => n.toLocaleString("fr-FR")+" FCFA";
 
+
 function showProducts(){
+  document.getElementById("products").innerHTML = products.map(p => `
+    <div class="card">
+      <img class="photo" src="${p.image}" alt="${p.name}">
+      <h3>${p.name}</h3>
+      <p class="price">${money(p.price)}</p>
+      <label>Choisir une pointure</label>
+      <select id="size-${p.id}">
+        ${p.sizes.map(s => `<option value="${s}">${s}</option>`).join("")}
+      </select>
+      <button class="btn" onclick="addToCart(${p.id})">
+        AJOUTER AU PANIER
+      </button>
+    </div>
+  `).join("");
+}
+
 
  document.getElementById("products").innerHTML=products.map(p=>`
 
