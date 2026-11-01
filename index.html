@@ -162,7 +162,7 @@ Vérifiez votre commande avant de l'envoyer.
 
 <p>
 
-Bienvenue chez Royal Sneakers by IWA.
+Bienvenue chez Royal Sneakers .
 
 Découvrez une sélection de sneakers
 
@@ -176,13 +176,13 @@ Merci de votre confiance et bonne visite !
 
 <footer id="contact">
 
-<h3>ROYAL SNEAKERS BY IWA</h3>
+<h3>ROYAL SNEAKERS </h3>
 
 <p>L'élégance à chaque pas.</p>
 
 <p>WhatsApp : +225 05 65 86 03 19</p>
 
-<p>© 2026 Royal Sneakers by IWA</p>
+<p>© 2026 Royal Sneakers </p>
 
 </footer>
 
@@ -225,22 +225,7 @@ let cart = [];
 const money = n => n.toLocaleString("fr-FR")+" FCFA";
 
 
-function showProducts(){
-  document.getElementById("products").innerHTML = products.map(p => `
-    <div class="card">
-      <img class="photo" src="${p.image}" alt="${p.name}">
-      <h3>${p.name}</h3>
-      <p class="price">${money(p.price)}</p>
-      <label>Choisir une pointure</label>
-      <select id="size-${p.id}">
-        ${p.sizes.map(s => `<option value="${s}">${s}</option>`).join("")}
-      </select>
-      <button class="btn" onclick="addToCart(${p.id})">
-        AJOUTER AU PANIER
-      </button>
-    </div>
-  `).join("");
-}
+
 
 
  document.getElementById("products").innerHTML=products.map(p=>`
