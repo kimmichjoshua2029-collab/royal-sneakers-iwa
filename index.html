@@ -38,7 +38,41 @@ nav a{color:#111;text-decoration:none;margin:0 10px;font-size:13px;font-weight:b
 .hero .btn{background:white;color:#111}
 
 .products{padding:40px 15px;text-align:center}
+.brands{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px;
+max-width:500px;
+margin:25px auto;
+padding:0 12px;
+}
 
+.brand{
+border:1px solid #eee;
+border-radius:10px;
+padding:8px 4px;
+cursor:pointer;
+background:white;
+}
+
+.brand img{
+width:38px;
+height:38px;
+object-fit:contain;
+display:block;
+margin:auto;
+}
+
+.brand p{
+font-size:11px;
+font-weight:bold;
+margin:5px 0 0;
+}
+
+.brand.active{
+border:2px solid #111;
+background:#f5f5f5;
+}
 .products h2,.about h2{font-family:Georgia,serif;font-size:29px}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:1000px;margin:30px auto}
@@ -130,7 +164,53 @@ Vous ne trouvez pas la paire de chaussures que vous cherchez ? Écrivez-nous, no
 </section>
 
 <section class="products" id="boutique">
+<div class="brands" id="brands">
 
+<div class="brand active" onclick="filterBrand('Toutes')">
+<p>Toutes</p>
+</div>
+
+<div class="brand" onclick="filterBrand('Nike')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg">
+<p>Nike</p>
+</div>
+
+<div class="brand" onclick="filterBrand('Adidas')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg">
+<p>Adidas</p>
+</div>
+
+<div class="brand" onclick="filterBrand('Puma')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Puma_logo.svg">
+<p>Puma</p>
+</div>
+
+<div class="brand" onclick="filterBrand('ASICS')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Asics_Logo.svg">
+<p>ASICS</p>
+</div>
+
+<div class="brand" onclick="filterBrand('New Balance')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/New_Balance_logo.svg">
+<p>New Balance</p>
+</div>
+
+<div class="brand" onclick="filterBrand('Vans')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Vans-logo.svg">
+<p>Vans</p>
+</div>
+
+<div class="brand" onclick="filterBrand('Jordan')">
+<img src="https://upload.wikimedia.org/wikipedia/en/3/37/Jumpman_logo.svg">
+<p>Jordan</p>
+</div>
+
+<div class="brand" onclick="filterBrand('Converse')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Converse_logo.svg">
+<p>Converse</p>
+</div>
+
+</div>
 <h2>Notre collection</h2>
 
 <p>Choisissez vos modèles préférés.</p>
@@ -235,7 +315,51 @@ const products = [
 ];
 
 let cart = [];
+let selectedBrand = "Toutes";
 
+function filterBrand(brand){
+
+selectedBrand = 
+document.querySelectorAll(".brand").forEach(b=>{
+b.classList.remove("active");
+
+if(b.textContent.trim().toLowerCase() === brand.toLowerCase()){
+b.classList.add("active");
+}
+});
+const filtered = selectedBrand === "Toutes"
+? products
+: products.filter(p=>{
+const name = p.name.toLowerCase();
+return name.includes(selectedBrand.toLowerCase());
+});
+
+document.getElementById("products").innerHTML =
+filtered.length
+? filtered.map(p=>`
+
+<div class="card">
+
+<img class="photo" src="${p.image}" alt="${p.name}">
+
+<h3>${p.name}</h3>
+
+<p class="price">${money(p.price)}</p>
+
+<label>Choisir une pointure</label>
+
+<select id="size-${p.id}">
+${p.sizes.map(s=>`<option value="${s}">${s}</option>`).join("")}
+</select>
+
+<button class="btn" onclick="addToCart(${p.id})">
+AJOUTER AU PANIER
+</button>
+
+</div>`).join("")
+: "<p>Aucune chaussure disponible pour cette marque.</p>";
+
+}
 const deliveryFee = 600;
 
 
