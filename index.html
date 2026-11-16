@@ -1,61 +1,173 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Royal Sneakers</title>
+<meta name="theme-color" content="#111111">
+<meta name="description" content="Découvrez la collection Royal Sneakers. Sneakers, plusieurs marques et commande WhatsApp avec paiement à la livraison.">
+<title>Royal Sneakers | Boutique officielle</title>
 
 <style>
-
 *{box-sizing:border-box}
 
-body{margin:0;background:#fff;color:#111;font-family:Arial,sans-serif}
+html{scroll-behavior:smooth}
 
-header{padding:25px 12px;text-align:center;border-bottom:1px solid #ddd}
+body{
+margin:0;
+background:#fff;
+color:#111;
+font-family:Arial,sans-serif;
+}
 
-header h1{font-family:Georgia,serif;letter-spacing:3px;margin:0}
+header{
+padding:22px 12px;
+text-align:center;
+border-bottom:1px solid #eee;
+}
 
-header p{letter-spacing:5px;font-size:12px}
+header h1{
+font-family:Georgia,serif;
+letter-spacing:3px;
+margin:0;
+font-size:27px;
+}
 
-nav{padding:16px;text-align:center;border-bottom:1px solid #ddd}
+header p{
+letter-spacing:3px;
+font-size:10px;
+margin:7px 0 0;
+color:#666;
+}
 
-nav a{color:#111;text-decoration:none;margin:0 10px;font-size:13px;font-weight:bold}
+nav{
+padding:15px 5px;
+text-align:center;
+border-bottom:1px solid #eee;
+position:sticky;
+top:0;
+background:white;
+z-index:10;
+}
 
-.hero{background:#111;color:white;text-align:center;padding:65px 15px}
+nav a{
+color:#111;
+text-decoration:none;
+margin:0 9px;
+font-size:12px;
+font-weight:bold;
+}
 
-.hero h2{font-family:Georgia,serif;font-size:36px}
+.hero{
+background:#111;
+color:white;
+text-align:center;
+padding:55px 18px;
+}
+
+.hero h2{
+font-family:Georgia,serif;
+font-size:36px;
+margin:18px 0;
+}
 
 .hero p{color:#ddd}
 
-.btn{background:#111;color:white;border:1px solid #111;padding:13px 22px;cursor:pointer}
+.hero .welcome{
+font-size:15px;
+letter-spacing:3px;
+font-weight:bold;
+}
 
-.hero .btn{background:white;color:#111}
+.hero .description{
+font-size:17px;
+line-height:1.7;
+font-weight:bold;
+}
 
-.products{padding:40px 15px;text-align:center}
+.hero .payment{
+font-size:15px;
+font-weight:bold;
+margin:22px 0;
+}
+
+.btn{
+background:#111;
+color:white;
+border:1px solid #111;
+padding:13px 20px;
+cursor:pointer;
+border-radius:4px;
+font-weight:bold;
+}
+
+.hero .btn{
+background:white;
+color:#111;
+}
+
+.products{
+padding:30px 12px 45px;
+text-align:center;
+}
+
+.section-title{
+font-family:Georgia,serif;
+font-size:28px;
+margin:15px 0 8px;
+}
+
+.search-box{
+max-width:600px;
+margin:22px auto 30px;
+display:flex;
+align-items:center;
+border:1px solid #ccc;
+border-radius:7px;
+padding:0 12px;
+background:white;
+}
+
+.search-box span{
+font-size:19px;
+}
+
+.search-box input{
+border:none;
+outline:none;
+padding:14px 10px;
+margin:0;
+width:100%;
+font-size:14px;
+}
+
+.brands-title{
+font-size:17px;
+font-weight:bold;
+margin:20px 0 12px;
+}
+
 .brands{
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:12px;
-max-width:500px;
-margin:25px auto;
-padding:0 12px;
+grid-template-columns:repeat(4,minmax(0,1fr));
+gap:10px;
+max-width:620px;
+margin:15px auto 30px;
 }
 
 .brand{
 border:1px solid #eee;
-border-radius:10px;
-padding:8px 4px;
+border-radius:9px;
+padding:9px 4px;
 cursor:pointer;
 background:white;
+min-width:0;
+transition:0.2s;
 }
 
 .brand img{
-width:38px;
-height:38px;
+width:32px;
+height:30px;
 object-fit:contain;
 display:block;
 margin:auto;
@@ -64,104 +176,259 @@ margin:auto;
 .brand p{
 font-size:11px;
 font-weight:bold;
-margin:5px 0 0;
+margin:6px 0 0;
 }
 
 .brand.active{
 border:2px solid #111;
-background:#f5f5f5;
+background:#f3f3f3;
 }
-.products h2,.about h2{font-family:Georgia,serif;font-size:29px}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:1000px;margin:30px auto}
+.brand:hover{
+border-color:#777;
+}
 
-.card{border:1px solid #ddd;padding:12px;text-align:left;background:white}
+.grid{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:12px;
+max-width:1100px;
+margin:25px auto;
+}
+
+.card{
+border:1px solid #e5e5e5;
+padding:10px;
+text-align:left;
+background:white;
+border-radius:7px;
+min-width:0;
+}
 
 .photo{
 width:100%;
-height:190px;
+height:155px;
 object-fit:contain;
 display:block;
-background:#f2f2f2;
+background:#f6f6f6;
+border-radius:5px;
 }
 
-.card h3{font-family:Georgia,serif}
+.card h3{
+font-family:Georgia,serif;
+font-size:15px;
+margin:12px 0 7px;
+}
 
-.price{font-weight:bold;font-size:19px}
-
-select,input{padding:11px;border:1px solid #bbb;width:100%;margin:7px 0;background:white}
-
-.card button{width:100%;margin-top:8px}
-
-.cart{background:#f5f5f5;padding:35px 18px}
-
-.cart h2{text-align:center;font-family:Georgia,serif}
-
-.cart-item{background:white;border:1px solid #ddd;padding:13px;margin:10px auto;max-width:650px}
-
-.cart-item button{padding:6px 10px;margin:4px}
-
-.total{font-size:22px;font-weight:bold;text-align:center;margin:20px}
-
-.checkout{max-width:500px;margin:auto}
-
-.about{text-align:center;padding:40px 20px;line-height:1.8}
-
-footer{background:#111;color:white;text-align:center;padding:30px}
-
-footer p{
-color:#fff;
+.price{
 font-weight:bold;
 font-size:17px;
+margin:8px 0;
 }
 
-button{cursor:pointer}
+.card label{
+font-size:12px;
+font-weight:bold;
+}
 
-@media(max-width:400px){.hero h2{font-size:29px}nav a{margin:0 5px}}
+select,input{
+padding:11px;
+border:1px solid #bbb;
+width:100%;
+margin:7px 0;
+background:white;
+border-radius:4px;
+}
 
+.card button{
+width:100%;
+margin-top:8px;
+padding:11px 5px;
+font-size:11px;
+}
+
+.no-result{
+grid-column:1/-1;
+padding:30px 10px;
+color:#666;
+}
+
+.cart{
+background:#f5f5f5;
+padding:35px 15px;
+}
+
+.cart h2{
+text-align:center;
+font-family:Georgia,serif;
+}
+
+.cart-item{
+background:white;
+border:1px solid #ddd;
+padding:13px;
+margin:10px auto;
+max-width:650px;
+border-radius:6px;
+}
+
+.cart-item button{
+padding:7px 12px;
+margin:4px;
+cursor:pointer;
+}
+
+.total-box{
+max-width:500px;
+margin:20px auto;
+background:white;
+padding:15px;
+border-radius:6px;
+}
+
+.total-line{
+display:flex;
+justify-content:space-between;
+margin:10px 0;
+font-size:14px;
+}
+
+.grand-total{
+font-size:20px;
+font-weight:bold;
+border-top:1px solid #ddd;
+padding-top:13px;
+}
+
+.checkout{
+max-width:500px;
+margin:auto;
+}
+
+.checkout h3{
+text-align:center;
+}
+
+.about{
+text-align:center;
+padding:40px 20px;
+line-height:1.8;
+}
+
+.about h2{
+font-family:Georgia,serif;
+font-size:27px;
+}
+
+.trust{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+max-width:600px;
+margin:25px auto;
+}
+
+.trust-item{
+border:1px solid #eee;
+padding:15px 8px;
+border-radius:7px;
+font-size:12px;
+}
+
+.trust-item strong{
+display:block;
+margin-bottom:7px;
+font-size:14px;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:30px 15px;
+}
+
+footer p{
+color:white;
+font-weight:bold;
+font-size:15px;
+line-height:1.7;
+}
+
+footer a{
+color:white;
+}
+
+@media(min-width:600px){
+.grid{
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:18px;
+}
+.photo{height:200px}
+.brands{grid-template-columns:repeat(5,1fr)}
+}
+
+@media(min-width:900px){
+.grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.brands{grid-template-columns:repeat(8,1fr)}
+}
+
+@media(max-width:380px){
+.hero h2{font-size:29px}
+nav a{margin:0 4px;font-size:10px}
+.brand p{font-size:10px}
+.photo{height:130px}
+}
 </style>
-
 </head>
 
 <body>
 
 <header>
-
 <h1>ROYAL SNEAKERS</h1>
-
-<p></p>
-
+<p>LE STYLE À CHAQUE PAS</p>
 </header>
 
 <nav>
-
 <a href="#accueil">ACCUEIL</a>
-
 <a href="#boutique">BOUTIQUE</a>
-
 <a href="#panier">MON PANIER 🛒</a>
-
 <a href="#contact">CONTACT</a>
-
 </nav>
 
 <section class="hero" id="accueil">
-
-<p style="font-size:20px;letter-spacing:3px;font-weight:bold;">BIENVENUE DANS NOTRE UNIVERS</p>
-
+<p class="welcome">BIENVENUE DANS NOTRE UNIVERS</p>
 <h2>Le style à chaque pas.</h2>
 
-<p style="font-size:20px;line-height:1.8;font-weight:bold;">
-Vous ne trouvez pas la paire de chaussures que vous cherchez ? Écrivez-nous, nous ferons notre possible pour vous satisfaire.
+<p class="description">
+Vous ne trouvez pas la paire de chaussures que vous cherchez ?
+Écrivez-nous, nous ferons notre possible pour vous satisfaire.
 </p>
-<p style="font-size:19px;font-weight:bold;letter-spacing:1px;">🚚 PAIEMENT À LA LIVRAISON</p>
 
-                        
-<a href="#boutique"><button class="btn">DÉCOUVRIR</button></a>
+<p class="payment">🚚 PAIEMENT À LA LIVRAISON</p>
 
+<a href="#boutique">
+<button class="btn">DÉCOUVRIR NOTRE COLLECTION</button>
+</a>
 </section>
 
 <section class="products" id="boutique">
+
+<h2 class="section-title">Notre boutique</h2>
+<p>Découvrez nos différents modèles de sneakers.</p>
+
+<div class="search-box">
+<span>🔍</span>
+<input
+type="search"
+id="searchInput"
+placeholder="Rechercher une chaussure ou une marque..."
+oninput="renderProducts()"
+>
+</div>
+
+<p class="brands-title">NOS MARQUES</p>
+
 <div class="brands" id="brands">
 
 <div class="brand active" onclick="filterBrand('Toutes')">
@@ -169,49 +436,54 @@ Vous ne trouvez pas la paire de chaussures que vous cherchez ? Écrivez-nous, no
 </div>
 
 <div class="brand" onclick="filterBrand('Nike')">
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike">
 <p>Nike</p>
 </div>
 
 <div class="brand" onclick="filterBrand('Adidas')">
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg" alt="Adidas">
 <p>Adidas</p>
 </div>
 
 <div class="brand" onclick="filterBrand('Puma')">
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Puma_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Puma_logo.svg" alt="Puma">
 <p>Puma</p>
 </div>
 
 <div class="brand" onclick="filterBrand('ASICS')">
-<img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Asics_Logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Asics_Logo.svg" alt="ASICS">
 <p>ASICS</p>
 </div>
 
 <div class="brand" onclick="filterBrand('New Balance')">
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/New_Balance_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/New_Balance_logo.svg" alt="New Balance">
 <p>New Balance</p>
 </div>
 
 <div class="brand" onclick="filterBrand('Vans')">
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Vans-logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Vans-logo.svg" alt="Vans">
 <p>Vans</p>
 </div>
 
 <div class="brand" onclick="filterBrand('Jordan')">
-<img src="https://upload.wikimedia.org/wikipedia/en/3/37/Jumpman_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/en/3/37/Jumpman_logo.svg" alt="Jordan">
 <p>Jordan</p>
 </div>
 
 <div class="brand" onclick="filterBrand('Converse')">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Converse_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Converse_logo.svg" alt="Converse">
 <p>Converse</p>
 </div>
 
+<div class="brand" onclick="filterBrand('Autres')">
+<p style="font-size:21px;margin:3px;">＋</p>
+<p>Autres</p>
 </div>
-<h2>Notre collection</h2>
 
-<p>Choisissez vos modèles préférés.</p>
+</div>
+
+<h2 class="section-title">Notre collection</h2>
+<p id="resultLabel">Choisissez vos modèles préférés.</p>
 
 <div class="grid" id="products"></div>
 
@@ -223,93 +495,134 @@ Vous ne trouvez pas la paire de chaussures que vous cherchez ? Écrivez-nous, no
 
 <div id="cartItems"></div>
 
-<div class="total" id="total">Total : 0 FCFA</div>
-
-<div class="checkout">
-
-<input id="clientName" placeholder="Votre nom">
-
-<input id="clientCity" placeholder="Votre lieu de livraison">
- 
-
-<button class="btn" style="width:100%" onclick="sendOrder()">
-
-COMMANDER SUR WHATSAPP
-
-</button>
-
+<div class="total-box">
+<div class="total-line">
+<span>Sous-total</span>
+<strong id="subtotal">0 FCFA</strong>
 </div>
 
-<p style="text-align:center;font-size:12px">
+<div class="total-line">
+<span>Livraison</span>
+<strong id="delivery">600 FCFA</strong>
+</div>
 
+<div class="total-line grand-total">
+<span>Total à payer</span>
+<strong id="total">600 FCFA</strong>
+</div>
+</div>
+
+<div class="checkout">
+<h3>Informations de livraison</h3>
+
+<input id="clientName" placeholder="Votre nom complet">
+
+<input id="clientCity" placeholder="Votre ville et votre quartier">
+
+<button class="btn" style="width:100%" onclick="sendOrder()">
+COMMANDER SUR WHATSAPP
+</button>
+</div>
+
+<p style="text-align:center;font-size:12px;margin-top:18px;">
 Vérifiez votre commande avant de l'envoyer.
-
 </p>
 
 </section>
 
 <section class="about">
 
-<h2>Notre univers</h2>
+<h2>Pourquoi choisir Royal Sneakers ?</h2>
 
 <p>
-
-Bienvenue chez Royal Sneakers .
-
-Découvrez une sélection de sneakers
-
+Bienvenue chez Royal Sneakers.
+Nous vous proposons une sélection de sneakers
 pour affirmer votre style.
-
-Merci de votre confiance et bonne visite !
-
 </p>
+
+<div class="trust">
+
+<div class="trust-item">
+<strong>🚚 Livraison</strong>
+Frais fixes de 600 FCFA.
+</div>
+
+<div class="trust-item">
+<strong>💵 Paiement</strong>
+Paiement à la livraison.
+</div>
+
+<div class="trust-item">
+<strong>📱 Contact direct</strong>
+Commandez sur WhatsApp.
+</div>
+
+<div class="trust-item">
+<strong>👟 Notre collection</strong>
+Plusieurs marques et modèles.
+</div>
+
+</div>
+
+<p>Merci de votre confiance et bonne visite !</p>
 
 </section>
 
 <footer id="contact">
 
-<h3>ROYAL SNEAKERS </h3>
+<h3>ROYAL SNEAKERS</h3>
 
 <p>L'élégance à chaque pas.</p>
 
-<p style="font-size:21px;font-weight:bold;">WhatsApp : +225 05 65 86 03 19</
-<p style="font-size:17px;font-weight:bold;">© 2026 Royal Sneakers</p>
+<p>WhatsApp : +225 05 65 86 03 19</p>
+
+<p>
+<a href="https://wa.me/2250565860319" target="_blank">
+Nous contacter sur WhatsApp
+</a>
+</p>
+
+<p style="font-size:13px;">© 2026 Royal Sneakers</p>
+
 </footer>
 
 <script>
 
 const phone = "2250565860319";
+const deliveryFee = 600;
 
-// Modifiez les noms et les prix avec vos vrais produits.
-
-
+function money(value){
+return Number(value).toLocaleString("fr-FR") + " FCFA";
+}
 
 const products = [
 
- {id:1,name:"Adidas Campus",price:13000,image:"390277e2-e29a-208a-beb5-19c578ab756f.jpeg",sizes:[40,41,42,43,44,45]},
+{id:1,name:"Adidas Campus",brand:"Adidas",price:13000,image:"390277e2-e29a-208a-beb5-19c578ab756f.jpeg",sizes:[40,41,42,43,44,45]},
 
- {id:2,name:"Asics Gel Kayano 14",price:16000,image:"IMG_1645.jpeg",sizes:[40,41,42,43,44,45]},
+{id:2,name:"Asics Gel Kayano 14",brand:"ASICS",price:16000,image:"IMG_1645.jpeg",sizes:[40,41,42,43,44,45]},
 
- {id:3,name:"Numeris Footwear",price:20000,image:"IMG_1650.jpeg",sizes:[40,41,42,43,44,45]},
+{id:3,name:"Numeris Footwear",brand:"Autres",price:20000,image:"IMG_1650.jpeg",sizes:[40,41,42,43,44,45]},
 
- {id:4,name:"Vans",price:14000,image:"IMG_1651.jpeg",sizes:[40,41,42,43,44,45]},
+{id:4,name:"Vans",brand:"Vans",price:14000,image:"IMG_1651.jpeg",sizes:[40,41,42,43,44,45]},
 
- {id:5,name:"News Balance2000",price:14000,image:"IMG_1652.jpeg",sizes:[40,41,42,43,44,45]},
+{id:5,name:"New Balance 2000",brand:"New Balance",price:14000,image:"IMG_1652.jpeg",sizes:[40,41,42,43,44,45]},
 
- {id:6,name:"News Balance530",price:14000,image:"IMG_1653.jpeg",sizes:[40,41,42,43,44,45]},
+{id:6,name:"New Balance 530",brand:"New Balance",price:14000,image:"IMG_1653.jpeg",sizes:[40,41,42,43,44,45]},
 
- {id:7,name:"jordan 4",price:13000,image:"IMG_1654.jpeg",sizes:[38,39,40,41,42,43,44,45]},
+{id:7,name:"Jordan 4",brand:"Jordan",price:13000,image:"IMG_1654.jpeg",sizes:[38,39,40,41,42,43,44,45]},
 
- {id:8,name:"Nike Tn",price:14000,image:"IMG_1655.jpeg",sizes:[40,41,42,43,44,45]},
+{id:8,name:"Nike TN",brand:"Nike",price:14000,image:"IMG_1655.jpeg",sizes:[40,41,42,43,44,45]},
 
- {id:9,name:"News Balance9060",price:14000,image:"IMG_1656.jpeg",sizes:[40,41,42,43,44,45]},
+{id:9,name:"New Balance 9060",brand:"New Balance",price:14000,image:"IMG_1656.jpeg",sizes:[40,41,42,43,44,45]},
 
- {id:10,name:"News Balance1906R",price:16000,image:"IMG_1657.jpeg",sizes:[40,41,42,43,44,45]},
+{id:10,name:"New Balance 1906R",brand:"New Balance",price:16000,image:"IMG_1657.jpeg",sizes:[40,41,42,43,44,45]},
 
- {id:11,name:"Nike Shox",price:16000,image:"ef91c658-37c5-52fa-75f3-5c2df9ef1187.jpeg",sizes:[40,41,42,43,44,45]}
-,{id:12,name:"Puma Suede",price:15000,image:"747756c3-cf19-911c-95e7-163d5ebc7575.jpeg",sizes:[40,41,42,43,44,45]}
+{id:11,name:"Nike Shox",brand:"Nike",price:16000,image:"ef91c658-37c5-52fa-75f3-5c2df9ef1187.jpeg",sizes:[40,41,42,43,44,45]},
 
-,{id:13,name:"Adidas Samba",price:14000,image:"8a37e600-1c21-a054-b613-c935a469cae8.jpeg",sizes:[40,41,42,43,44,45]}
+{id:12,name:"Puma Suede",brand:"Puma",price:15000,image:"747756c3-cf19-911c-95e7-163d5ebc7575.jpeg",sizes:[40,41,42,43,44,45]},
+
+{id:13,name:"Adidas Samba",brand:"Adidas",price:14000,image:"8a37e600-1c21-a054-b613-c935a469cae8.jpeg",sizes:[40,41,42,43,44,45]}
+
 ];
 
 let cart = [];
@@ -317,7 +630,8 @@ let selectedBrand = "Toutes";
 
 function filterBrand(brand){
 
-selectedBrand = 
+selectedBrand = brand;
+
 document.querySelectorAll(".brand").forEach(b=>{
 b.classList.remove("active");
 
@@ -325,12 +639,33 @@ if(b.textContent.trim().toLowerCase() === brand.toLowerCase()){
 b.classList.add("active");
 }
 });
-const filtered = selectedBrand === "Toutes"
-? products
-: products.filter(p=>{
-const name = p.name.toLowerCase();
-return name.includes(selectedBrand.toLowerCase());
+
+renderProducts();
+
+}
+
+function renderProducts(){
+
+const search = document.getElementById("searchInput").value
+.trim().toLowerCase();
+
+const filtered = products.filter(p=>{
+
+const matchesBrand =
+selectedBrand === "Toutes" || p.brand === selectedBrand;
+
+const matchesSearch =
+p.name.toLowerCase().includes(search) ||
+p.brand.toLowerCase().includes(search);
+
+return matchesBrand && matchesSearch;
+
 });
+
+document.getElementById("resultLabel").textContent =
+filtered.length + (filtered.length > 1
+? " modèles disponibles."
+: " modèle disponible.");
 
 document.getElementById("products").innerHTML =
 filtered.length
@@ -354,170 +689,155 @@ ${p.sizes.map(s=>`<option value="${s}">${s}</option>`).join("")}
 AJOUTER AU PANIER
 </button>
 
-</div>`).join("")
-: "<p>Aucune chaussure disponible pour cette marque.</p>";
+</div>
+
+`).join("")
+: `<p class="no-result">Aucun modèle trouvé. Essayez une autre recherche ou contactez-nous sur WhatsApp.</p>`;
 
 }
-const deliveryFee = 600;
-
-
-
-
-
- document.getElementById("products").innerHTML=products.map(p=>`
-
- <div class="card">
-
- <img class="photo" src="${p.image}" alt="${p.name}">
-
- <h3>${p.name}</h3>
-
- <p class="price">${money(p.price)}</p>
-
- <label>Choisir une pointure</label>
-
- <select id="size-${p.id}">
-
- ${p.sizes.map(s=>`<option value="${s}">${s}</option>`).join("")}
-
- </select>
-
- <button class="btn" onclick="addToCart(${p.id})">
-
- AJOUTER AU PANIER
-
- </button>
-
- </div>`).join("");
-
-
 
 function addToCart(id){
 
- const product=products.find(p=>p.id===id);
+const product = products.find(p=>p.id===id);
 
- const size=document.getElementById("size-"+id).value;
+const size = document.getElementById("size-"+id).value;
 
- const existing=cart.find(i=>i.id===id&&i.size===size);
+const existing = cart.find(i=>i.id===id && i.size===size);
 
- if(existing) existing.qty++;
+if(existing){
+existing.qty++;
+}else{
+cart.push({...product,size,qty:1});
+}
 
- else cart.push({...product,size,qty:1});
+showCart();
 
- showCart();
-
- alert("Chaussure ajoutée au panier !");
+alert("Chaussure ajoutée au panier !");
 
 }
 
 function showCart(){
 
- const area=document.getElementById("cartItems");
+const area = document.getElementById("cartItems");
 
- if(cart.length===0){
+if(cart.length===0){
 
- area.innerHTML="<p style='text-align:center'>Votre panier est vide.</p>";
+area.innerHTML="<p style='text-align:center'>Votre panier est vide.</p>";
 
- }else{
+}else{
 
- area.innerHTML=cart.map((item,index)=>`
+area.innerHTML = cart.map((item,index)=>`
 
- <div class="cart-item">
+<div class="cart-item">
 
- <strong>${item.name}</strong>
+<strong>${item.name}</strong>
 
- <p>Pointure : ${item.size}</p>
+<p>Pointure : ${item.size}</p>
 
- <p>Prix : ${money(item.price)}</p>
+<p>Prix : ${money(item.price)}</p>
 
- <p>Quantité : ${item.qty}</p>
+<p>Quantité : ${item.qty}</p>
 
- <button onclick="changeQty(${index},-1)">−</button>
+<button onclick="changeQty(${index},-1)">−</button>
 
- <button onclick="changeQty(${index},1)">+</button>
+<button onclick="changeQty(${index},1)">+</button>
 
- <button onclick="removeItem(${index})">Supprimer</button>
+<button onclick="removeItem(${index})">Supprimer</button>
 
- </div>`).join("");
+</div>
 
- }
+`).join("");
 
- const total=cart.reduce((sum,i)=>sum+i.price*i.qty,0);
+}
 
- document.getElementById("total").textContent="Total : "+money(total);
+const subtotal = cart.reduce((sum,i)=>sum+i.price*i.qty,0);
+
+const total = subtotal + (cart.length > 0 ? deliveryFee : 0);
+
+document.getElementById("subtotal").textContent = money(subtotal);
+
+document.getElementById("delivery").textContent =
+cart.length > 0 ? money(deliveryFee) : "0 FCFA";
+
+document.getElementById("total").textContent = money(total);
 
 }
 
 function changeQty(index,amount){
 
- cart[index].qty+=amount;
+cart[index].qty += amount;
 
- if(cart[index].qty<=0) cart.splice(index,1);
+if(cart[index].qty<=0){
+cart.splice(index,1);
+}
 
- showCart();
+showCart();
 
 }
 
 function removeItem(index){
 
- cart.splice(index,1);
+cart.splice(index,1);
 
- showCart();
+showCart();
 
 }
 
 function sendOrder(){
 
- if(cart.length===0){
+if(cart.length===0){
+alert("Votre panier est vide.");
+return;
+}
 
- alert("Votre panier est vide.");
+const name = document.getElementById("clientName").value.trim();
 
- return;
+const city = document.getElementById("clientCity").value.trim();
 
- }
+if(!name || !city){
+alert("Veuillez renseigner votre nom et votre lieu de livraison.");
+return;
+}
 
- const name=document.getElementById("clientName").value.trim();
+const subtotal = cart.reduce((sum,i)=>sum+i.price*i.qty,0);
 
- const city=document.getElementById("clientCity").value.trim();
+const total = subtotal + deliveryFee;
 
- if(!name||!city){
+let message = "Bonjour Royal Sneakers !\n\n";
 
- alert("Veuillez renseigner votre nom et votre ville.");
+message += "Je souhaite passer cette commande :\n";
 
- return;
+cart.forEach(i=>{
 
- }
+message += `\n- ${i.name}\n`;
+message += `Marque : ${i.brand}\n`;
+message += `Pointure : ${i.size}\n`;
+message += `Quantité : ${i.qty}\n`;
+message += `Sous-total : ${money(i.price*i.qty)}\n`;
 
- const total=cart.reduce((sum,i)=>sum+i.price*i.qty,0);
+});
 
- let message="Bonjour Royal Sneakers  !\n\n";
+message += `\nSous-total : ${money(subtotal)}`;
+message += `\nLivraison : ${money(deliveryFee)}`;
+message += `\nTOTAL À PAYER : ${money(total)}`;
 
- message+="Je souhaite commander :\n";
+message += `\n\nNom : ${name}`;
+message += `\nLieu de livraison : ${city}`;
 
- cart.forEach(i=>{
+message += "\n\nPaiement à la livraison.";
+message += "\nMerci de confirmer ma commande !";
 
- message+=`\n- ${i.name}\nPointure : ${i.size}\nQuantité : ${i.qty}\nSous-total : ${money(i.price*i.qty)}\n`;
-
- });
-
- message+=`\nTOTAL : ${money(total)}`;
-
- message+=`\n\nNom : ${name}\nVille : ${city}`;
-
- message+="\nMerci de confirmer ma commande !";
-
- window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(message),"_blank");
+window.open(
+"https://wa.me/"+phone+"?text="+encodeURIComponent(message),
+"_blank"
+);
 
 }
 
-
-
+renderProducts();
 showCart();
 
 </script>
 
 </body>
-
 </html>
-
-
