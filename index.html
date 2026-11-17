@@ -1,374 +1,277 @@
-
+   
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#111111">
-<meta name="description" content="Découvrez la collection Royal Sneakers. Sneakers, plusieurs marques et commande WhatsApp avec paiement à la livraison.">
+<meta name="description" content="Royal Sneakers : découvrez notre collection de sneakers et commandez facilement sur WhatsApp.">
 <title>Royal Sneakers | Boutique officielle</title>
 
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:#111;font-family:Arial,sans-serif}
+button,a{ -webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+header{padding:20px 12px;text-align:center;border-bottom:1px solid #eee}
+header h1{font-family:Georgia,serif;letter-spacing:3px;margin:0;font-size:27px}
+header p{letter-spacing:3px;font-size:10px;margin:7px 0 0;color:#666}
 
-body{
-margin:0;
-background:#fff;
-color:#111;
+nav{
+padding:15px 5px;text-align:center;border-bottom:1px solid #eee;
+position:sticky;top:0;background:white;z-index:20;
+box-shadow:0 3px 12px #00000008;
+}
+nav a{color:#111;text-decoration:none;margin:0 9px;font-size:12px;font-weight:bold}
+
+.hero{
+background:linear-gradient(120deg,#090909,#292929);
+color:white;
+padding:35px 17px 38px;
+overflow:hidden;
+position:relative;
+}
+.hero-content{max-width:1100px;margin:auto}
+.hero-label{
+display:inline-block;background:#fff;color:#111;
+padding:9px 13px;border-radius:3px;
+font-size:10px;font-weight:bold;letter-spacing:2px;
+}
+.hero h2{
+font-family:Georgia,serif;font-size:42px;
+line-height:1.15;margin:22px 0 12px;
+}
+.hero p{color:#ddd;line-height:1.7;font-size:14px}
+.hero-layout{
+display:grid;grid-template-columns:1fr;
+gap:15px;align-items:center;
+}
+.hero-image{
+width:100%;height:230px;object-fit:contain;
+background:#ffffff0c;border-radius:12px;
+animation:floatShoe 4s ease-in-out infinite;
+}
+@keyframes floatShoe{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-9px)}
+}
+.hero-price{font-size:17px!important;font-weight:bold;color:white!important}
+.hero-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.btn{
+background:#111;color:white;border:1px solid #111;
+padding:13px 18px;border-radius:5px;font-weight:bold;
+display:inline-block;text-decoration:none;
+transition:.2s;
+}
+.btn:hover{opacity:.8;transform:translateY(-2px)}
+.btn-white{background:white;color:#111;border-color:white}
+.hero-delivery{
+margin-top:25px;padding:17px;
+border:1px solid #ffffff55;border-radius:9px;
+background:#ffffff12;
+display:flex;align-items:center;gap:13px;
+}
+.hero-delivery .delivery-icon{font-size:32px}
+.hero-delivery strong{font-size:15px;display:block}
+.hero-delivery small{color:#ddd;display:block;margin-top:5px}
+
+.products{padding:35px 12px 45px;text-align:center}
+.section-title{font-family:Georgia,serif;font-size:27px;margin:15px 0 8px}
+.section-subtitle{font-size:13px;color:#666;line-height:1.6}
+
+.search-box{
+max-width:650px;margin:25px auto 12px;
+display:flex;gap:7px;align-items:center;
+border:1px solid #ccc;border-radius:8px;padding:5px;
+background:white;
+}
+.search-box span{font-size:20px;padding-left:8px}
+.search-box input{
+border:none;outline:none;padding:13px 7px;
+width:100%;font-size:14px;margin:0;
+}
+.search-box button{
+background:#111;color:white;border:none;
+border-radius:5px;padding:13px 15px;font-weight:bold;
+white-space:nowrap;
+}
+.search-hint{font-size:11px;color:#777;margin-bottom:25px}
+
+.brands-title{font-size:16px;font-weight:bold;margin:30px 0 12px}
+.brands{
+display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+gap:10px;max-width:700px;margin:15px auto 35px;
+}
+.brand{
+border:1px solid #eee;border-radius:9px;padding:12px 4px;
+cursor:pointer;background:white;min-width:0;transition:.2s;
+}
+.brand img{
+width:36px;height:32px;object-fit:contain;
+display:block;margin:auto;
+}
+.brand p{font-size:11px;font-weight:bold;margin:7px 0 0}
+.brand.active{border:2px solid #111;background:#f4f4f4}
+.brand:hover{border-color:#777}
+.vans-logo{
+font-weight:1000;font-size:22px;letter-spacing:-2px;
 font-family:Arial,sans-serif;
 }
 
-header{
-padding:22px 12px;
-text-align:center;
-border-bottom:1px solid #eee;
-}
-
-header h1{
-font-family:Georgia,serif;
-letter-spacing:3px;
-margin:0;
-font-size:27px;
-}
-
-header p{
-letter-spacing:3px;
-font-size:10px;
-margin:7px 0 0;
-color:#666;
-}
-
-nav{
-padding:15px 5px;
-text-align:center;
-border-bottom:1px solid #eee;
-position:sticky;
-top:0;
-background:white;
-z-index:10;
-}
-
-nav a{
-color:#111;
-text-decoration:none;
-margin:0 9px;
-font-size:12px;
-font-weight:bold;
-}
-
-.hero{
-background:#111;
-color:white;
-text-align:center;
-padding:55px 18px;
-}
-
-.hero h2{
-font-family:Georgia,serif;
-font-size:36px;
-margin:18px 0;
-}
-
-.hero p{color:#ddd}
-
-.hero .welcome{
-font-size:15px;
-letter-spacing:3px;
-font-weight:bold;
-}
-
-.hero .description{
-font-size:17px;
-line-height:1.7;
-font-weight:bold;
-}
-
-.hero .payment{
-font-size:15px;
-font-weight:bold;
-margin:22px 0;
-}
-
-.btn{
-background:#111;
-color:white;
-border:1px solid #111;
-padding:13px 20px;
-cursor:pointer;
-border-radius:4px;
-font-weight:bold;
-}
-
-.hero .btn{
-background:white;
-color:#111;
-}
-
-.products{
-padding:30px 12px 45px;
-text-align:center;
-}
-
-.section-title{
-font-family:Georgia,serif;
-font-size:28px;
-margin:15px 0 8px;
-}
-
-.search-box{
-max-width:600px;
-margin:22px auto 30px;
-display:flex;
-align-items:center;
-border:1px solid #ccc;
-border-radius:7px;
-padding:0 12px;
-background:white;
-}
-
-.search-box span{font-size:19px}
-
-.search-box input{
-border:none;
-outline:none;
-padding:14px 10px;
-margin:0;
-width:100%;
-font-size:14px;
-}
-
-.brands-title{
-font-size:17px;
-font-weight:bold;
-margin:20px 0 12px;
-}
-
-.brands{
-display:grid;
-grid-template-columns:repeat(4,minmax(0,1fr));
-gap:10px;
-max-width:620px;
-margin:15px auto 30px;
-}
-
-.brand{
-border:1px solid #eee;
-border-radius:9px;
-padding:9px 4px;
-cursor:pointer;
-background:white;
-min-width:0;
-transition:0.2s;
-}
-
-.brand img{
-width:32px;
-height:30px;
-object-fit:contain;
-display:block;
-margin:auto;
-}
-
-.brand p{
-font-size:11px;
-font-weight:bold;
-margin:6px 0 0;
-}
-
-.brand.active{
-border:2px solid #111;
-background:#f3f3f3;
-}
-
-.brand:hover{border-color:#777}
-
 .grid{
-display:grid;
-grid-template-columns:repeat(2,minmax(0,1fr));
-gap:12px;
-max-width:1100px;
-margin:25px auto;
+display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+gap:12px;max-width:1100px;margin:25px auto;
 }
-
 .card{
-border:1px solid #e5e5e5;
-padding:10px;
-text-align:left;
-background:white;
-border-radius:7px;
-min-width:0;
+border:1px solid #e5e5e5;padding:9px;text-align:left;
+background:white;border-radius:9px;min-width:0;
+transition:.2s;
 }
-
+.card:hover{box-shadow:0 5px 18px #00000012;transform:translateY(-3px)}
 .photo{
-width:100%;
-height:155px;
-object-fit:contain;
-display:block;
-background:#f6f6f6;
-border-radius:5px;
-}
-
-.card h3{
-font-family:Georgia,serif;
-font-size:15px;
-margin:12px 0 7px;
-}
-
-.price{
-font-weight:bold;
-font-size:17px;
-margin:8px 0;
-}
-
-.card label{
-font-size:12px;
-font-weight:bold;
-}
-
-select,input{
-padding:11px;
-border:1px solid #bbb;
-width:100%;
-margin:7px 0;
-background:white;
-border-radius:4px;
-}
-
-.card button{
-width:100%;
-margin-top:8px;
-padding:11px 5px;
-font-size:11px;
-}
-
-.no-result{
-grid-column:1/-1;
-padding:30px 10px;
-color:#666;
-}
-
-.cart{
-background:#f5f5f5;
-padding:35px 15px;
-}
-
-.cart h2{
-text-align:center;
-font-family:Georgia,serif;
-}
-
-.cart-item{
-background:white;
-border:1px solid #ddd;
-padding:13px;
-margin:10px auto;
-max-width:650px;
-border-radius:6px;
-}
-
-.cart-item button{
-padding:7px 12px;
-margin:4px;
+width:100%;height:155px;object-fit:contain;
+display:block;background:#f6f6f6;border-radius:6px;
 cursor:pointer;
 }
+.card h3{font-family:Georgia,serif;font-size:14px;margin:12px 0 7px}
+.price{font-weight:bold;font-size:17px;margin:8px 0}
+.card label{font-size:12px;font-weight:bold}
+select,input{
+padding:11px;border:1px solid #bbb;width:100%;
+margin:7px 0;background:white;border-radius:4px;
+}
+.card button{width:100%;margin-top:8px;padding:11px 5px;font-size:11px}
+.card .details-btn{background:white;color:#111;border:1px solid #111}
+.no-result{grid-column:1/-1;padding:30px 10px;color:#666}
 
+.availability{
+font-size:10px;color:#555;margin:7px 0;
+}
+.product-badge{
+display:inline-block;background:#f0f0f0;
+padding:5px 8px;border-radius:3px;
+font-size:10px;font-weight:bold;
+}
+
+.cart{background:#f5f5f5;padding:35px 15px}
+.cart h2{text-align:center;font-family:Georgia,serif}
+.cart-item{
+background:white;border:1px solid #ddd;
+padding:13px;margin:10px auto;max-width:650px;border-radius:6px;
+}
+.cart-item button{padding:7px 12px;margin:4px;cursor:pointer}
 .total-box{
-max-width:500px;
-margin:20px auto;
-background:white;
-padding:15px;
-border-radius:6px;
+max-width:500px;margin:20px auto;background:white;
+padding:15px;border-radius:6px;
 }
-
-.total-line{
-display:flex;
-justify-content:space-between;
-margin:10px 0;
-font-size:14px;
-}
-
-.grand-total{
-font-size:20px;
-font-weight:bold;
-border-top:1px solid #ddd;
-padding-top:13px;
-}
-
-.checkout{
-max-width:500px;
-margin:auto;
-}
-
+.total-line{display:flex;justify-content:space-between;margin:10px 0;font-size:14px}
+.grand-total{font-size:20px;font-weight:bold;border-top:1px solid #ddd;padding-top:13px}
+.checkout{max-width:500px;margin:auto}
 .checkout h3{text-align:center}
 
-.about{
-text-align:center;
-padding:40px 20px;
-line-height:1.8;
-}
-
-.about h2{
-font-family:Georgia,serif;
-font-size:27px;
-}
-
+.about{text-align:center;padding:40px 20px;line-height:1.8}
+.about h2{font-family:Georgia,serif;font-size:27px}
 .trust{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:12px;
-max-width:600px;
-margin:25px auto;
+display:grid;grid-template-columns:repeat(2,1fr);
+gap:12px;max-width:650px;margin:25px auto;
 }
-
 .trust-item{
-border:1px solid #eee;
-padding:15px 8px;
-border-radius:7px;
-font-size:12px;
+border:1px solid #eee;padding:18px 10px;
+border-radius:8px;font-size:12px;background:white;
 }
+.trust-item strong{display:block;margin-bottom:8px;font-size:15px}
+.trust-icon{font-size:27px;display:block;margin-bottom:8px}
 
-.trust-item strong{
-display:block;
-margin-bottom:7px;
-font-size:14px;
+.payment-section{
+background:#111;color:white;padding:35px 15px;text-align:center;
 }
-
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:30px 15px;
+.payment-section h2{font-family:Georgia,serif;font-size:27px}
+.payment-grid{
+display:grid;grid-template-columns:repeat(2,1fr);
+gap:12px;max-width:650px;margin:25px auto;
 }
-
-footer p{
-color:white;
-font-weight:bold;
-font-size:15px;
-line-height:1.7;
+.payment-card{
+background:#222;border:1px solid #444;
+padding:20px 10px;border-radius:9px;
 }
+.payment-card span{font-size:29px;display:block;margin-bottom:10px}
+.payment-card strong{font-size:13px}
+.payment-card p{font-size:11px;color:#ccc;line-height:1.5}
 
+footer{background:#080808;color:white;text-align:center;padding:30px 15px}
+footer p{color:white;font-weight:bold;font-size:14px;line-height:1.7}
 footer a{color:white}
 
-@media(min-width:600px){
-.grid{
-grid-template-columns:repeat(3,minmax(0,1fr));
-gap:18px;
+.delivery-banner{
+background:#f3f3f3;padding:25px 15px;text-align:center;
+border-top:1px solid #eee;border-bottom:1px solid #eee;
 }
+.delivery-banner .big-truck{font-size:42px}
+.delivery-banner h2{font-family:Georgia,serif;margin:8px 0}
+.delivery-banner p{font-size:13px;color:#555;line-height:1.6}
+
+/* Fiche détaillée */
+.modal{
+display:none;position:fixed;inset:0;background:#000b;
+z-index:100;padding:15px;overflow-y:auto;
+}
+.modal.show{display:flex;align-items:center;justify-content:center}
+.modal-content{
+background:white;border-radius:12px;width:100%;
+max-width:650px;padding:17px;position:relative;
+max-height:95vh;overflow-y:auto;
+}
+.close-modal{
+position:absolute;right:12px;top:12px;
+border:none;background:#111;color:white;
+border-radius:50%;width:35px;height:35px;font-size:21px;
+}
+.detail-image{
+width:100%;height:270px;object-fit:contain;
+background:#f5f5f5;border-radius:8px;
+margin-top:30px;
+}
+.detail-name{font-family:Georgia,serif;font-size:24px}
+.detail-price{font-size:23px;font-weight:bold}
+.detail-info{font-size:13px;line-height:1.7;color:#555}
+.detail-actions{display:flex;gap:8px;flex-wrap:wrap}
+.detail-actions button{flex:1;min-width:130px}
+.recommend-title{
+font-family:Georgia,serif;font-size:19px;margin-top:30px;
+}
+.related-grid{
+display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+gap:10px;margin-top:12px;
+}
+.related-item{
+border:1px solid #eee;border-radius:7px;padding:8px;
+cursor:pointer;text-align:left;
+}
+.related-item img{
+width:100%;height:100px;object-fit:contain;background:#f5f5f5;
+}
+.related-item strong{font-size:12px;display:block;margin-top:7px}
+.related-item small{font-weight:bold;display:block;margin-top:5px}
+
+@media(min-width:600px){
+.hero-layout{grid-template-columns:1.1fr .9fr}
+.hero-image{height:320px}
+.hero h2{font-size:52px}
+.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .photo{height:200px}
 .brands{grid-template-columns:repeat(5,1fr)}
+.payment-grid{grid-template-columns:repeat(4,1fr)}
 }
-
 @media(min-width:900px){
 .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 .brands{grid-template-columns:repeat(8,1fr)}
 }
-
 @media(max-width:380px){
-.hero h2{font-size:29px}
+.hero h2{font-size:33px}
 nav a{margin:0 4px;font-size:10px}
-.brand p{font-size:10px}
 .photo{height:130px}
+.search-box button{padding:12px 9px;font-size:11px}
 }
 </style>
 </head>
@@ -383,38 +286,57 @@ nav a{margin:0 4px;font-size:10px}
 <nav>
 <a href="#accueil">ACCUEIL</a>
 <a href="#boutique">BOUTIQUE</a>
-<a href="#panier">MON PANIER 🛒</a>
+<a href="#panier">PANIER 🛒</a>
 <a href="#contact">CONTACT</a>
 </nav>
 
+<!-- GRANDE PUBLICITÉ -->
 <section class="hero" id="accueil">
-<p class="welcome">BIENVENUE DANS NOTRE UNIVERS</p>
-<h2>Le style à chaque pas.</h2>
+<div class="hero-content">
+<span class="hero-label">ROYAL SNEAKERS COLLECTION</span>
 
-<p class="description">
-Vous ne trouvez pas la paire de chaussures que vous cherchez ?
-Écrivez-nous, nous ferons notre possible pour vous satisfaire.
+<div class="hero-layout">
+<div>
+<h2>Le style.<br>À chaque pas.</h2>
+<p>
+Découvrez notre sélection de sneakers.
+Des modèles pour affirmer votre personnalité
+et donner du caractère à votre style.
 </p>
+<p class="hero-price">DES SNEAKERS À PARTIR DE 13 000 FCFA</p>
 
-<p class="payment">🚚 PAIEMENT À LA LIVRAISON</p>
+<div class="hero-buttons">
+<a href="#boutique" class="btn btn-white">DÉCOUVRIR LA COLLECTION</a>
+<a href="#contact" class="btn">NOUS CONTACTER</a>
+</div>
+</div>
 
-<a href="#boutique" class="btn">DÉCOUVRIR NOTRE COLLECTION</a>
+<img class="hero-image" src="IMG_1655.jpeg" alt="Sneaker Royal Sneakers">
+</div>
+
+<div class="hero-delivery">
+<span class="delivery-icon">🚚</span>
+<div>
+<strong>PAIEMENT À LA LIVRAISON</strong>
+<small>Vous réglez votre commande à la réception.</small>
+</div>
+</div>
+</div>
 </section>
 
 <section class="products" id="boutique">
 
 <h2 class="section-title">Notre boutique</h2>
-<p>Découvrez nos différents modèles de sneakers.</p>
+<p class="section-subtitle">Découvrez nos différents modèles de sneakers.</p>
 
-<div class="search-box">
+<!-- RECHERCHE MANUELLE -->
+<form class="search-box" onsubmit="event.preventDefault();searchProducts()">
 <span>🔍</span>
-<input
-type="search"
-id="searchInput"
-placeholder="Rechercher une chaussure ou une marque..."
-oninput="renderProducts()"
->
-</div>
+<input type="search" id="searchInput"
+placeholder="Rechercher une chaussure ou une marque...">
+<button type="submit">RECHERCHER</button>
+</form>
+<p class="search-hint">Écrivez votre recherche puis appuyez sur RECHERCHER.</p>
 
 <p class="brands-title">NOS MARQUES</p>
 
@@ -450,7 +372,7 @@ oninput="renderProducts()"
 </div>
 
 <div class="brand" data-brand="Vans" onclick="filterBrand('Vans')">
-<img src="https://cdn.simpleicons.org/vans/000000" alt="Vans">
+<div class="vans-logo">VANS</div>
 <p>Vans</p>
 </div>
 
@@ -465,7 +387,7 @@ oninput="renderProducts()"
 </div>
 
 <div class="brand" data-brand="Autres" onclick="filterBrand('Autres')">
-<p style="font-size:21px;margin:3px;">＋</p>
+<p style="font-size:21px;margin:3px">＋</p>
 <p>Autres</p>
 </div>
 
@@ -473,41 +395,43 @@ oninput="renderProducts()"
 
 <h2 class="section-title">Notre collection</h2>
 <p id="resultLabel">Choisissez vos modèles préférés.</p>
-
 <div class="grid" id="products"></div>
 
 </section>
 
+<!-- LIVRAISON -->
+<section class="delivery-banner">
+<div class="big-truck">🚚</div>
+<h2>Livraison disponible</h2>
+<p>
+Frais fixes de livraison : <strong>600 FCFA</strong>.<br>
+Commandez vos sneakers et renseignez votre lieu de livraison.
+</p>
+</section>
+
+<!-- PANIER -->
 <section class="cart" id="panier">
-
 <h2>🛒 Mon panier</h2>
-
 <div id="cartItems"></div>
 
 <div class="total-box">
-
 <div class="total-line">
 <span>Sous-total</span>
 <strong id="subtotal">0 FCFA</strong>
 </div>
-
 <div class="total-line">
 <span>Livraison</span>
 <strong id="delivery">0 FCFA</strong>
 </div>
-
 <div class="total-line grand-total">
 <span>Total à payer</span>
 <strong id="total">0 FCFA</strong>
 </div>
-
 </div>
 
 <div class="checkout">
 <h3>Informations de livraison</h3>
-
 <input id="clientName" placeholder="Votre nom complet">
-
 <input id="clientCity" placeholder="Votre ville et votre quartier">
 
 <button class="btn" style="width:100%" onclick="sendOrder()">
@@ -515,16 +439,47 @@ COMMANDER SUR WHATSAPP
 </button>
 </div>
 
-<p style="text-align:center;font-size:12px;margin-top:18px;">
+<p style="text-align:center;font-size:12px;margin-top:18px">
 Vérifiez votre commande avant de l'envoyer.
 </p>
+</section>
 
+<!-- PAIEMENTS -->
+<section class="payment-section">
+<h2>Livraison & moyens de paiement</h2>
+<p style="font-size:13px;color:#ddd">
+Tout pour commander en toute simplicité.
+</p>
+
+<div class="payment-grid">
+<div class="payment-card">
+<span>🚚</span>
+<strong>Livraison</strong>
+<p>Frais fixes de 600 FCFA.</p>
+</div>
+
+<div class="payment-card">
+<span>💵</span>
+<strong>Paiement à la livraison</strong>
+<p>Réglez votre commande à la réception.</p>
+</div>
+
+<div class="payment-card">
+<span>📱</span>
+<strong>Paiement mobile</strong>
+<p>Contactez-nous pour confirmer les moyens disponibles.</p>
+</div>
+
+<div class="payment-card">
+<span>📦</span>
+<strong>Disponibilité</strong>
+<p>Disponibilité des modèles à confirmer lors de la commande.</p>
+</div>
+</div>
 </section>
 
 <section class="about">
-
 <h2>Pourquoi choisir Royal Sneakers ?</h2>
-
 <p>
 Bienvenue chez Royal Sneakers.
 Nous vous proposons une sélection de sneakers
@@ -532,53 +487,59 @@ pour affirmer votre style.
 </p>
 
 <div class="trust">
-
 <div class="trust-item">
-<strong>🚚 Livraison</strong>
+<span class="trust-icon">🚚</span>
+<strong>Livraison</strong>
 Frais fixes de 600 FCFA.
 </div>
-
 <div class="trust-item">
-<strong>💵 Paiement</strong>
+<span class="trust-icon">💵</span>
+<strong>Paiement</strong>
 Paiement à la livraison.
 </div>
-
 <div class="trust-item">
-<strong>📱 Contact direct</strong>
+<span class="trust-icon">📱</span>
+<strong>Contact direct</strong>
 Commandez sur WhatsApp.
 </div>
-
 <div class="trust-item">
-<strong>👟 Notre collection</strong>
+<span class="trust-icon">👟</span>
+<strong>Notre collection</strong>
 Plusieurs marques et modèles.
 </div>
-
 </div>
 
 <p>Merci de votre confiance et bonne visite !</p>
-
 </section>
 
 <footer id="contact">
-
 <h3>ROYAL SNEAKERS</h3>
-
 <p>L'élégance à chaque pas.</p>
-
 <p>WhatsApp : +225 05 65 86 03 19</p>
-
 <p>
 <a href="https://wa.me/2250565860319" target="_blank" rel="noopener noreferrer">
 Nous contacter sur WhatsApp
 </a>
 </p>
-
-<p style="font-size:13px;">© 2026 Royal Sneakers</p>
-
+<p style="font-size:13px">© 2026 Royal Sneakers</p>
 </footer>
 
-<script>
+<!-- FENÊTRE DÉTAILS PRODUIT -->
+<div class="modal" id="productModal" onclick="closeModalOutside(event)">
+<div class="modal-content">
+<button class="close-modal" onclick="closeProduct()">×</button>
 
+<div id="productDetails"></div>
+
+<h3 class="recommend-title">Vous aimerez aussi 👟</h3>
+<p style="font-size:12px;color:#777">
+Découvrez également ces autres modèles de notre collection.
+</p>
+<div class="related-grid" id="relatedProducts"></div>
+</div>
+</div>
+
+<script>
 const phone = "2250565860319";
 const deliveryFee = 600;
 
@@ -587,111 +548,145 @@ return Number(value).toLocaleString("fr-FR") + " FCFA";
 }
 
 const products = [
-
 {id:1,name:"Adidas Campus",brand:"Adidas",price:13000,image:"390277e2-e29a-208a-beb5-19c578ab756f.jpeg",sizes:[40,41,42,43,44,45]},
-
 {id:2,name:"Asics Gel Kayano 14",brand:"ASICS",price:16000,image:"IMG_1645.jpeg",sizes:[40,41,42,43,44,45]},
-
 {id:3,name:"Numeris Footwear",brand:"Autres",price:20000,image:"IMG_1650.jpeg",sizes:[40,41,42,43,44,45]},
-
 {id:4,name:"Vans",brand:"Vans",price:14000,image:"IMG_1651.jpeg",sizes:[40,41,42,43,44,45]},
-
 {id:5,name:"New Balance 2000",brand:"New Balance",price:14000,image:"IMG_1652.jpeg",sizes:[40,41,42,43,44,45]},
-
 {id:6,name:"New Balance 530",brand:"New Balance",price:14000,image:"IMG_1653.jpeg",sizes:[40,41,42,43,44,45]},
-
 {id:7,name:"Jordan 4",brand:"Jordan",price:13000,image:"IMG_1654.jpeg",sizes:[38,39,40,41,42,43,44,45]},
-
 {id:8,name:"Nike TN",brand:"Nike",price:14000,image:"IMG_1655.jpeg",sizes:[40,41,42,43,44,45]},
-
 {id:9,name:"New Balance 9060",brand:"New Balance",price:14000,image:"IMG_1656.jpeg",sizes:[40,41,42,43,44,45]},
-
 {id:10,name:"New Balance 1906R",brand:"New Balance",price:16000,image:"IMG_1657.jpeg",sizes:[40,41,42,43,44,45]},
-
 {id:11,name:"Nike Shox",brand:"Nike",price:16000,image:"ef91c658-37c5-52fa-75f3-5c2df9ef1187.jpeg",sizes:[40,41,42,43,44,45]},
-
 {id:12,name:"Puma Suede",brand:"Puma",price:15000,image:"747756c3-cf19-911c-95e7-163d5ebc7575.jpeg",sizes:[40,41,42,43,44,45]},
-
 {id:13,name:"Adidas Samba",brand:"Adidas",price:14000,image:"8a37e600-1c21-a054-b613-c935a469cae8.jpeg",sizes:[40,41,42,43,44,45]}
-
 ];
 
 let cart = [];
 let selectedBrand = "Toutes";
+let currentSearch = "";
 
 function filterBrand(brand){
-
 selectedBrand = brand;
 
 document.querySelectorAll(".brand").forEach(b=>{
-b.classList.remove("active");
-
-if(b.dataset.brand === brand){
-b.classList.add("active");
-}
+b.classList.toggle("active",b.dataset.brand === brand);
 });
 
 renderProducts();
+}
 
+function searchProducts(){
+currentSearch = document.getElementById("searchInput").value.trim().toLowerCase();
+renderProducts();
+document.getElementById("products").scrollIntoView({behavior:"smooth",block:"start"});
 }
 
 function renderProducts(){
 
-const search = document.getElementById("searchInput").value
-.trim().toLowerCase();
-
 const filtered = products.filter(p=>{
-
-const matchesBrand =
-selectedBrand === "Toutes" || p.brand === selectedBrand;
-
+const matchesBrand = selectedBrand === "Toutes" || p.brand === selectedBrand;
 const matchesSearch =
-p.name.toLowerCase().includes(search) ||
-p.brand.toLowerCase().includes(search);
+p.name.toLowerCase().includes(currentSearch) ||
+p.brand.toLowerCase().includes(currentSearch);
 
 return matchesBrand && matchesSearch;
-
 });
 
 document.getElementById("resultLabel").textContent =
-filtered.length + (filtered.length > 1
-? " modèles disponibles."
-: " modèle disponible.");
+filtered.length + (filtered.length > 1 ? " modèles disponibles." : " modèle disponible.");
 
-document.getElementById("products").innerHTML =
-filtered.length
+document.getElementById("products").innerHTML = filtered.length
 ? filtered.map(p=>`
-
 <div class="card">
-
-<img class="photo" src="${p.image}" alt="${p.name}">
-
-<h3>${p.name}</h3>
-
+<img class="photo" src="${p.image}" alt="${p.name}" onclick="openProduct(${p.id})">
+<span class="product-badge">${p.brand}</span>
+<h3 onclick="openProduct(${p.id})" style="cursor:pointer">${p.name}</h3>
 <p class="price">${money(p.price)}</p>
+<p class="availability">Disponibilité à confirmer</p>
 
 <label>Choisir une pointure</label>
-
 <select id="size-${p.id}">
 ${p.sizes.map(s=>`<option value="${s}">${s}</option>`).join("")}
 </select>
 
+<button class="btn details-btn" onclick="openProduct(${p.id})">
+VOIR LA CHAUSSURE
+</button>
 <button class="btn" onclick="addToCart(${p.id})">
 AJOUTER AU PANIER
 </button>
-
 </div>
-
 `).join("")
 : `<p class="no-result">Aucun modèle trouvé. Essayez une autre recherche ou contactez-nous sur WhatsApp.</p>`;
+}
 
+/* OUVRIR LA FICHE DU PRODUIT */
+function openProduct(id){
+const p = products.find(item=>item.id===id);
+if(!p)return;
+
+document.getElementById("productDetails").innerHTML = `
+<img class="detail-image" src="${p.image}" alt="${p.name}">
+<p class="product-badge">${p.brand}</p>
+<h2 class="detail-name">${p.name}</h2>
+<p class="detail-price">${money(p.price)}</p>
+<p class="detail-info">
+Marque : ${p.brand}<br>
+Pointures proposées : ${p.sizes.join(" - ")}<br>
+Disponibilité : à confirmer lors de la commande.
+</p>
+<label>Choisissez votre pointure</label>
+<select id="detailSize">
+${p.sizes.map(s=>`<option value="${s}">${s}</option>`).join("")}
+</select>
+<div class="detail-actions">
+<button class="btn" onclick="addDetailToCart(${p.id})">
+AJOUTER AU PANIER
+</button>
+<button class="btn details-btn" onclick="closeProduct()">
+FERMER
+</button>
+</div>
+`;
+
+const related = products.filter(item=>item.id!==id).slice(0,4);
+
+document.getElementById("relatedProducts").innerHTML = related.map(item=>`
+<div class="related-item" onclick="openProduct(${item.id})">
+<img src="${item.image}" alt="${item.name}">
+<strong>${item.name}</strong>
+<small>${money(item.price)}</small>
+</div>
+`).join("");
+
+document.getElementById("productModal").classList.add("show");
+document.body.style.overflow="hidden";
+}
+
+function closeProduct(){
+document.getElementById("productModal").classList.remove("show");
+document.body.style.overflow="";
+}
+
+function closeModalOutside(event){
+if(event.target.id==="productModal")closeProduct();
+}
+
+function addDetailToCart(id){
+const size = document.getElementById("detailSize").value;
+addProductToCart(id,size);
+closeProduct();
 }
 
 function addToCart(id){
-
-const product = products.find(p=>p.id===id);
 const size = document.getElementById("size-"+id).value;
+addProductToCart(id,size);
+}
 
+function addProductToCart(id,size){
+const product = products.find(p=>p.id===id);
 const existing = cart.find(i=>i.id===id && i.size===size);
 
 if(existing){
@@ -701,130 +696,92 @@ cart.push({...product,size,qty:1});
 }
 
 showCart();
-
 alert("Chaussure ajoutée au panier !");
-
 }
 
 function showCart(){
-
 const area = document.getElementById("cartItems");
 
 if(cart.length===0){
-
 area.innerHTML="<p style='text-align:center'>Votre panier est vide.</p>";
-
 }else{
-
 area.innerHTML = cart.map((item,index)=>`
-
 <div class="cart-item">
-
 <strong>${item.name}</strong>
-
 <p>Pointure : ${item.size}</p>
-
 <p>Prix : ${money(item.price)}</p>
-
 <p>Quantité : ${item.qty}</p>
-
 <button onclick="changeQty(${index},-1)">−</button>
-
 <button onclick="changeQty(${index},1)">+</button>
-
 <button onclick="removeItem(${index})">Supprimer</button>
-
 </div>
-
 `).join("");
-
 }
 
 const subtotal = cart.reduce((sum,i)=>sum+i.price*i.qty,0);
-const total = subtotal + (cart.length > 0 ? deliveryFee : 0);
+const total = subtotal + (cart.length>0 ? deliveryFee : 0);
 
-document.getElementById("subtotal").textContent = money(subtotal);
-
-document.getElementById("delivery").textContent =
-cart.length > 0 ? money(deliveryFee) : "0 FCFA";
-
-document.getElementById("total").textContent = money(total);
-
+document.getElementById("subtotal").textContent=money(subtotal);
+document.getElementById("delivery").textContent=cart.length>0 ? money(deliveryFee) : "0 FCFA";
+document.getElementById("total").textContent=money(total);
 }
 
 function changeQty(index,amount){
-
-cart[index].qty += amount;
-
-if(cart[index].qty<=0){
-cart.splice(index,1);
-}
-
+cart[index].qty+=amount;
+if(cart[index].qty<=0)cart.splice(index,1);
 showCart();
-
 }
 
 function removeItem(index){
-
 cart.splice(index,1);
-
 showCart();
-
 }
 
 function sendOrder(){
-
 if(cart.length===0){
 alert("Votre panier est vide.");
 return;
 }
 
-const name = document.getElementById("clientName").value.trim();
-const city = document.getElementById("clientCity").value.trim();
+const name=document.getElementById("clientName").value.trim();
+const city=document.getElementById("clientCity").value.trim();
 
 if(!name || !city){
 alert("Veuillez renseigner votre nom et votre lieu de livraison.");
 return;
 }
 
-const subtotal = cart.reduce((sum,i)=>sum+i.price*i.qty,0);
-const total = subtotal + deliveryFee;
+const subtotal=cart.reduce((sum,i)=>sum+i.price*i.qty,0);
+const total=subtotal+deliveryFee;
 
-let message = "Bonjour Royal Sneakers !\n\n";
-message += "Je souhaite passer cette commande :\n";
+let message="Bonjour Royal Sneakers !\n\n";
+message+="Je souhaite passer cette commande :\n";
 
 cart.forEach(i=>{
-
-message += `\n- ${i.name}\n`;
-message += `Marque : ${i.brand}\n`;
-message += `Pointure : ${i.size}\n`;
-message += `Quantité : ${i.qty}\n`;
-message += `Sous-total : ${money(i.price*i.qty)}\n`;
-
+message+=`\n- ${i.name}\n`;
+message+=`Marque : ${i.brand}\n`;
+message+=`Pointure : ${i.size}\n`;
+message+=`Quantité : ${i.qty}\n`;
+message+=`Sous-total : ${money(i.price*i.qty)}\n`;
 });
 
-message += `\nSous-total : ${money(subtotal)}`;
-message += `\nLivraison : ${money(deliveryFee)}`;
-message += `\nTOTAL À PAYER : ${money(total)}`;
-
-message += `\n\nNom : ${name}`;
-message += `\nLieu de livraison : ${city}`;
-
-message += "\n\nPaiement à la livraison.";
-message += "\nMerci de confirmer ma commande !";
+message+=`\nSous-total : ${money(subtotal)}`;
+message+=`\nLivraison : ${money(deliveryFee)}`;
+message+=`\nTOTAL À PAYER : ${money(total)}`;
+message+=`\n\nNom : ${name}`;
+message+=`\nLieu de livraison : ${city}`;
+message+="\n\nPaiement à la livraison.";
+message+="\nMerci de confirmer ma commande !";
 
 window.open(
 "https://wa.me/"+phone+"?text="+encodeURIComponent(message),
 "_blank"
 );
-
 }
 
 renderProducts();
 showCart();
-
 </script>
 
 </body>
 </html>
-
