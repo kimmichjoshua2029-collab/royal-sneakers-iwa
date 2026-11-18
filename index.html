@@ -419,8 +419,12 @@ function renderBrands(){
 
 function filterBrand(brand){
   selectedBrand = brand;
+  currentSearch = "";
+  document.getElementById("searchInput").value = "";
   renderBrands();
   renderProducts();
+}
+
 }
 
 function searchProducts(){
