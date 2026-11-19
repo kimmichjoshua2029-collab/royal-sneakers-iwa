@@ -216,7 +216,7 @@ footer a.wa{display:inline-flex;gap:8px;align-items:center;background:#25d366;co
       <div>ROYAL SNEAKERS<small>L'élégance à chaque pas</small></div>
     </a>
     <form class="search" onsubmit="searchProducts();return false" role="search">
-      <input id="searchInput" type="search" placeholder="Rechercher une marque ou un modèle" aria-label="Rechercher">
+      <input id="searchInput" type="search" oninput="liveSearch()" placeholder="Rechercher une marque ou un modèle" aria-label="Rechercher">
       <button type="submit">Chercher</button>
     </form>
     <button class="cart-btn" onclick="openCart()" aria-label="Ouvrir le panier">
